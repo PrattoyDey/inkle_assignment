@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "d104c25b-b894-4be1-8e07-fd6359caaaed",
+		"name": "Inkle Mini Twitter Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50281840",
+		"_collection_link": "https://moa22cs-7046719.postman.co/workspace/Moteesh-A's-Workspace~17d8e9fd-24fb-4d81-8a0c-34d4e26955c4/collection/50281840-d104c25b-b894-4be1-8e07-fd6359caaaed?action=share&source=collection_link&creator=50281840"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Auth – Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMTcwMSwianRpIjoiZDU5MWM5YzUtNGM3NC00N2ZhLTlkZTQtYzMwNWRjYTQ5NWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMxNzAxLCJjc3JmIjoiZTFjYzhmOGEtMzc0OC00N2MyLWFiMDgtMWE5YTFlNjczMTk2IiwiZXhwIjoxNzYzODMyNjAxfQ._n66OQTehT2anKmwtTcuVz5xZHCcvOXorDL27Mv1HWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test1@example.com\",\n  \"password\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts – Create Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMTcwMSwianRpIjoiZDU5MWM5YzUtNGM3NC00N2ZhLTlkZTQtYzMwNWRjYTQ5NWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMxNzAxLCJjc3JmIjoiZTFjYzhmOGEtMzc0OC00N2MyLWFiMDgtMWE5YTFlNjczMTk2IiwiZXhwIjoxNzYzODMyNjAxfQ._n66OQTehT2anKmwtTcuVz5xZHCcvOXorDL27Mv1HWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"This is my first post from the Inkle assignment!\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/posts/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts – Get All Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMTcwMSwianRpIjoiZDU5MWM5YzUtNGM3NC00N2ZhLTlkZTQtYzMwNWRjYTQ5NWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMxNzAxLCJjc3JmIjoiZTFjYzhmOGEtMzc0OC00N2MyLWFiMDgtMWE5YTFlNjczMTk2IiwiZXhwIjoxNzYzODMyNjAxfQ._n66OQTehT2anKmwtTcuVz5xZHCcvOXorDL27Mv1HWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"content\": \"This is my first post from the Inkle assignment!\",\n    \"author_id\": 1,\n    \"created_at\": \"2025-11-22T17:05:28.123456\"\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/posts/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity – Get All Activity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMTcwMSwianRpIjoiZDU5MWM5YzUtNGM3NC00N2ZhLTlkZTQtYzMwNWRjYTQ5NWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMxNzAxLCJjc3JmIjoiZTFjYzhmOGEtMzc0OC00N2MyLWFiMDgtMWE5YTFlNjczMTk2IiwiZXhwIjoxNzYzODMyNjAxfQ._n66OQTehT2anKmwtTcuVz5xZHCcvOXorDL27Mv1HWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"type\": \"post\",\n    \"text\": \"Test User made a post\",\n    \"created_at\": \"2025-11-22T17:05:28.123456\"\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/activity/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"activity",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Second Signup",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Second Auth - Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Users - Follow - Each Other",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMjU2MSwianRpIjoiMzdhN2ViZjUtMzE2YS00YTQ0LTg0ZjMtNTRhNzZiYTM4MDQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMyNTYxLCJjc3JmIjoiM2Q2YzU5ZDMtNDczNy00MTBkLTk1NzctYzAzZjMyYWEwMDQ0IiwiZXhwIjoxNzYzODMzNDYxfQ.ayxOUgZFhTO9cSIgALxvyS59Qw3ompYeNPpjjrVrWEc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/follow/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"follow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity Check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMjU2MSwianRpIjoiMzdhN2ViZjUtMzE2YS00YTQ0LTg0ZjMtNTRhNzZiYTM4MDQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMyNTYxLCJjc3JmIjoiM2Q2YzU5ZDMtNDczNy00MTBkLTk1NzctYzAzZjMyYWEwMDQ0IiwiZXhwIjoxNzYzODMzNDYxfQ.ayxOUgZFhTO9cSIgALxvyS59Qw3ompYeNPpjjrVrWEc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/activity/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"activity",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts – Like Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMjU2MSwianRpIjoiMzdhN2ViZjUtMzE2YS00YTQ0LTg0ZjMtNTRhNzZiYTM4MDQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMyNTYxLCJjc3JmIjoiM2Q2YzU5ZDMtNDczNy00MTBkLTk1NzctYzAzZjMyYWEwMDQ0IiwiZXhwIjoxNzYzODMzNDYxfQ.ayxOUgZFhTO9cSIgALxvyS59Qw3ompYeNPpjjrVrWEc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/posts/1/like",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"posts",
+						"1",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity – Get All Activity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMjU2MSwianRpIjoiMzdhN2ViZjUtMzE2YS00YTQ0LTg0ZjMtNTRhNzZiYTM4MDQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMyNTYxLCJjc3JmIjoiM2Q2YzU5ZDMtNDczNy00MTBkLTk1NzctYzAzZjMyYWEwMDQ0IiwiZXhwIjoxNzYzODMzNDYxfQ.ayxOUgZFhTO9cSIgALxvyS59Qw3ompYeNPpjjrVrWEc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"type\": \"post\",\n    \"text\": \"Test User made a post\",\n    \"created_at\": \"2025-11-22T17:05:28.123456\"\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/activity/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"activity",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMzYxOCwianRpIjoiYzBmNTA0N2EtMTA5ZS00YjExLThmODgtZTliOTVjYjRhNjhmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMzNjE4LCJjc3JmIjoiNmE5MzIyMzktYTczMC00NDQzLWFlMGMtNDk1MzFhYmEwZGFlIiwiZXhwIjoxNzYzODM0NTE4fQ.qU8OYRUA3HUpihL6UNugx-OW0s6SwUOZTVOmtcWpQWo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/block/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"block",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzMzg3OSwianRpIjoiZjYwNDEzYzgtYzY3Zi00YmZlLWJkNGItZmMxNDZiYTM3N2RjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODMzODc5LCJjc3JmIjoiOTE4YmYzNjQtZDE1NS00ZWQ1LTlmYzQtYmRmMjhiZThhYTEzIiwiZXhwIjoxNzYzODM0Nzc5fQ._HDQ8TUuj_p7SyLolY4_iEjJhEH7Cx62PdnojRD1gHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/unfollow/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"unfollow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlike Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MzgzNDA1NSwianRpIjoiMzNkMWFiMGMtOTM4Ny00NzM5LWIyZjAtZjU3MTcyYzZmMmM1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Mywicm9sZSI6InVzZXIifSwibmJmIjoxNzYzODM0MDU1LCJjc3JmIjoiZGUxMzcwZGUtZmM1OC00MmNlLWFlZjgtNDc1MzRjODlmMjY0IiwiZXhwIjoxNzYzODM0OTU1fQ.e2X-bTeDFMZz3PG2n0g42_c-yarvtHM8disTwh9DBfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/posts/1/unlike",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"posts",
+						"1",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
