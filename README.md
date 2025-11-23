@@ -8,46 +8,41 @@ All routes are tested using Postman, and the Postman collection JSON is included
 ## 🚀 Features Implemented
 
 ### 🔐 Authentication
-
-- User Signup
-- User Login
-- JWT Token Authentication
+- User Signup  
+- User Login  
+- JWT Token Authentication  
 
 ### 📝 Posts
-
-- Create Post
-- Get All Posts
-- Like Post
-- Unlike Post
+- Create Post  
+- Get All Posts  
+- Like Post  
+- Unlike Post  
 
 ### 👥 User Interactions
-
-- Follow User
-- Unfollow User
-- Block User
+- Follow User  
+- Unfollow User  
+- Block User  
 
 ### 📰 Activity Feed
-
-- Shows posts, likes, follows, blocks
-- Sorted chronologically
-- Includes user + following activity
+- Shows posts, likes, follows, blocks  
+- Sorted chronologically  
+- Includes user + following activity  
 
 ### 🧪 Postman Tested
-
-- All endpoints tested
-- Exported Postman JSON included
+- All endpoints tested  
+- Exported Postman JSON included  
 
 ---
 
 ## 🛠 Tech Stack
 
-- Python 3
-- Flask
-- Flask-SQLAlchemy
-- Flask-JWT-Extended
-- Flask-CORS
-- SQLite (default DB)
-- Postman
+- Python 3  
+- Flask  
+- Flask-SQLAlchemy  
+- Flask-JWT-Extended  
+- Flask-CORS  
+- SQLite (default DB)  
+- Postman  
 
 ---
 
@@ -70,14 +65,20 @@ mini-twitter-backend/
 │
 └── instance/
     └── database.sqlite
-⚙️ Installation & Setup
+~~~
+
+## ⚙️ Installation & Setup
+~~~
 1️⃣ Clone the repo
 git clone <your-github-repo-url>
 cd mini-twitter-backend
+~~~
+~~~
 2️⃣ Create a virtual environment
 python3 -m venv venv
 source venv/bin/activate       # Mac/Linux
 venv\Scripts\activate          # Windows
+~~~
 3️⃣ Install dependencies
 pip install -r requirements.txt
 4️⃣ Run the server
@@ -85,7 +86,7 @@ python app.py
 API will run at:
 
 http://127.0.0.1:5000
-🔐 Authentication Example
+##🔐 Authentication Example
 Login returns:
 
 {
@@ -145,4 +146,3 @@ Postman-tested API endpoints
 Clean project structure
 Professional README
 Submission-ready package
-```
